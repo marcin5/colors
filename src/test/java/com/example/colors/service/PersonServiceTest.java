@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import com.example.colors.dao.PersonDAO;
-import com.example.colors.dao.impl.csv.CsvPersonDao;
+import com.example.colors.dao.impl.repository.PersonRepository;
 import com.example.colors.exceptions.NoPersonFoundException;
 import com.example.colors.exceptions.UpdateNotAvailableException;
 import com.example.colors.model.Color;
@@ -28,7 +28,7 @@ import com.example.colors.model.to.PersonTO;
 @SpringBootTest
 public class PersonServiceTest {
 
-  @MockBean(classes = CsvPersonDao.class)
+  @MockBean(classes = PersonRepository.class)
   private PersonDAO<PersonEty> csvDao;
 
   @Autowired
